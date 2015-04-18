@@ -1,0 +1,46 @@
+{
+  "name": "elementary.css",
+  "description": "elementary OS is pretty",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/1j01/elementary.css.git"
+  },
+  "bugs": {
+    "url": "http://github.com/1j01/elementary.css/issues"
+  },
+  "license": "GPL-3.0",
+  "keywords": [
+    "elementary",
+    "elementaryOS",
+    "elementary OS",
+    "elementary-os",
+    "os",
+    "OS",
+    "operating-system",
+    "gtk",
+    "gtk+",
+    "gtk3",
+    "css",
+    "gtk-css",
+    "stylesheet",
+    "stylesheets",
+    "theme",
+    "themes",
+    "linux",
+    "gui",
+    "browser",
+    "web",
+    "eye-candy",
+    "design"
+  ],
+  "main": "lib/elementary.css",
+  "scripts": {
+    "prepublish": "cake build"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.1.9",
+    "coffee-script": "^1.9.1",
+    "postcss-gtk": "^1.0.0"
+  }
+}

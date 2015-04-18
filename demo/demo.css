@@ -1,0 +1,86 @@
+
+body {
+	background-image: url(clouds.jpg);
+	background-size: cover;
+	font-family: sans-serif;
+}
+.window-frame {
+	position: absolute;
+	left: 50px;
+	right: 50px;
+	top: 50px;
+	max-width: 1520px;
+}
+
+.titlebar {
+	text-align: center;
+}
+.header-bar {
+	padding: 0;
+	line-height: 40px;
+}
+GtkInfoBar {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	padding: 0 5px;
+}
+GtkInfoBar > GtkLabel {
+	flex: 1;
+}
+
+.sidebar {
+	flex: 0;
+	flex-grow: 0.1;
+	flex-basis: 100px;
+	display: block;
+}
+.view {
+	padding: 5px;
+	/* this doesn't work very well */
+	border-style: solid;
+	border-color: transparent;
+	border-top-width: 1px !important;
+	border-bottom-width: 1px !important;
+}
+
+.my-window-content {
+	background: white;
+	display: flex;
+	flex-orientation: column;
+	justify-content: center;
+}
+.my-main-window-content {
+	flex: 1;
+	flex-basis: 150px;
+	padding: 5px;
+}
+
+img {
+	flex: 0 1 auto;
+}
+
+a {
+	cursor: pointer;
+	color: #08C;
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 5px 0;
+}
+p {
+	margin: 15px 0;
+}
+
+* {
+	user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+h1, h2, h3, h4, h5, h6, p,
+input, textarea {
+	user-select: text;
+	-webkit-user-select: text;
+	cursor: text;
+}
+

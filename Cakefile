@@ -15,6 +15,16 @@ task "build", ->
 		output_path = join output_dir, to
 		source_map_output_path = "#{output_path}.map"
 		gtk_css = read input_path, "utf8"
+		gtk_css += """
+			
+			
+			/* Fix titlebuttons showing border when window isn't in focus */
+			.titlebar .titlebutton:backdrop {
+				border: 1px solid transparent;
+			}
+			
+			
+		"""
 		postgtk
 			.use autoprefixer browsers: ['> 1%', 'IE 9']
 			.process gtk_css, from: input_path, to: output_path, map: inline: yes

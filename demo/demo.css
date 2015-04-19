@@ -13,12 +13,29 @@ body {
 }
 
 .titlebar {
-	text-align: center;
-}
-.header-bar {
-	padding: 0;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: row;
+	-webkit-app-region: drag;
 	line-height: 40px;
 }
+.titlebutton {
+	-webkit-app-region: no-drag;
+	margin: 0 4px;
+}
+.titlebar .titlebutton {
+	display: flex;
+	flex: 0 0 auto;
+	align-self: center;
+}
+.title {
+	justify-content: center;
+	display: flex;
+	flex: 1;
+	padding: 0;
+	margin: 0;
+}
+
 GtkInfoBar {
 	display: flex;
 	align-items: center;

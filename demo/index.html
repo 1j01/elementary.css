@@ -6,15 +6,16 @@
 		<link href="extreme-reset.css" rel="stylesheet" type="text/css">
 		<link href="open-sans.css" rel="stylesheet" type="text/css">
 		<link href="../lib/elementary.css" rel="stylesheet" type="text/css">
+		<link href="../icons/icons.css" rel="stylesheet" type="text/css">
 		<link href="demo.css" rel="stylesheet" type="text/css">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 	</head>
 	<body>
-		<div class="dialog window-frame active">
+		<div class="window-frame active">
 			<div class="titlebar">
-				<div class="header-bar">
-					<GtkLabel class="title">Hello world!</GtkLabel>
-				</div>
+				<button class="titlebutton button"><span class="e-icon-close"></span></button>
+				<GtkLabel class="title">Hello world!</GtkLabel>
+				<button class="titlebutton button"><span class="e-icon-fullscreen"></span></button>
 			</div>
 			<GtkInfoBar class="question">
 				<GtkLabel>What's going on?</GtkLabel>

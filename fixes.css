@@ -1,0 +1,10 @@
+
+/* Fix titlebuttons showing border when window isn't in focus */
+.titlebar .titlebutton:backdrop {
+	border: 1px solid transparent;
+}
+
+/* Fix button using default browser styling instead of dark styles */
+.window-frame .button {
+	background-color: transparent;
+}

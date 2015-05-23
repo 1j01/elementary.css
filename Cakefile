@@ -18,11 +18,7 @@ task "build", ->
 		gtk_css += """
 			
 			
-			/* Fix titlebuttons showing border when window isn't in focus */
-			.titlebar .titlebutton:backdrop {
-				border: 1px solid transparent;
-			}
-			
+			@import "../../fixes.css";
 			
 		"""
 		postgtk
@@ -30,7 +26,11 @@ task "build", ->
 			.process gtk_css, from: input_path, to: output_path, map: inline: yes
 			.then (result)->
 				write output_path, result.css, "utf8"
-				write source_map_output_path, result.map, "utf8" if result.map
+				if result.map
+					write source_map_output_path, result.map, "utf8"
+					console.log "wrote #{output_path} and #{source_map_output_path}"
+				else
+					console.log "wrote #{output_path}"
 			.catch (e)->
 				console.error e.stack
 	

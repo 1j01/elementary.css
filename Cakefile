@@ -3,6 +3,7 @@
 {join} = require "path"
 postgtk = require "postcss-gtk"
 autoprefixer = require "autoprefixer-core"
+csswring = require "csswring"
 
 task "build", ->
 	
@@ -23,6 +24,7 @@ task "build", ->
 		"""
 		postgtk
 			.use autoprefixer browsers: ['> 1%', 'IE 9']
+			.use csswring
 			.process gtk_css, from: input_path, to: output_path, map: inline: yes
 			.then (result)->
 				write output_path, result.css, "utf8"

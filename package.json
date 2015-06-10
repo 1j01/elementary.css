@@ -1,7 +1,7 @@
 {
   "name": "elementary.css",
   "description": "elementary OS is pretty",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": {
     "type": "git",
     "url": "http://github.com/1j01/elementary.css.git"

@@ -1,7 +1,7 @@
 {
   "name": "elementary.css",
   "description": "elementary OS is pretty",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": {
     "type": "git",
     "url": "http://github.com/1j01/elementary.css.git"
@@ -43,7 +43,9 @@
     "autoprefixer-core": "^5.1.9",
     "coffee-script": "^1.9.1",
     "csswring": "^3.0.5",
+    "decompress": "^4.0.0",
+    "decompress-tarxz": "^2.0.0",
     "postcss-gtk": "^1.0.2",
-    "request": "^2.63.0"
+    "request": "^2.72.0"
   }
 }

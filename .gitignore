@@ -1,6 +1,7 @@
 
 .bzr/
 node_modules/
+temp/
 
 # Logs
 logs

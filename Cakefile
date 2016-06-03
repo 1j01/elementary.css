@@ -1,9 +1,7 @@
 
 fs = require "fs"
 {join} = require "path"
-# {extractTarballDownload} = require "tarball-extract"
 request = require "request"
-# targz = require "tar.gz"
 decompress = require "decompress"
 decompressTarxz = require "decompress-tarxz"
 postgtk = require "postcss-gtk"
@@ -44,35 +42,6 @@ task "pull-latest", ->
 			if m?
 				[_, tarball_url, title] = m
 				console.log "Source tarball URL: #{tarball_url}"
-				# temp_file = "temp/egtk.tar.gz"
-				# # destination_fiel = ""
-				# # extractTarballDownload tarball_url, temp_file, destination_fiel, {}, (err, info)->
-				# # 	throw info.error if info?.error
-				# # 	throw err if err
-				# read = request.get(tarball_url)
-				# write = targz().createWriteStream("./egtk")
-				# # read.on "close", ->
-				# # read.on "end", ->
-				# # write.on "finish", ->
-				# 	# console.log """
-				# 	# 	Downloaded and extracted to ./egtk/
-				# 	# 	Comment out color: @transparent; in gtk-widgets.css
-				# 	# 	Fix missing commas in gtk-widgets.css and gtk-widgets-dark.css (GtkMessageDialog .titlebar:backdrop)
-				# 	# 	Then npm run prepublish
-				# 	# 	I'm probably the laziest script ever
-				# 	# """
-				# write.on "error", (err)->
-				# 	console.log "Failed"
-				# 	console.error err
-				# read.pipe(write)
-				# console.log """
-				# 	Downloading and extracting to ./egtk/
-				# 	You need to comment out color: @transparent; in gtk-widgets.css
-				# 	Then npm run prepublish
-				# """
-				
-				# ^^^ wrong file format ^^^
-				
 				temp_folder = "temp"
 				try fs.mkdirSync temp_folder
 				temp_file = "#{temp_folder}/egtk.tar.gz"
@@ -92,22 +61,12 @@ task "pull-latest", ->
 							console.log "Failed to extract tarball"
 							console.error err
 						.then ->
-							# console.log "Extracted to elementary/"
-							# ...
-							# console.log "Renamed elementary/ to egtk/"
-							# ...can use `strip: 1` instead
-							# console.log """
-							# 	Extracted to egtk/
-							# 	You need to comment out color: @transparent; in gtk-widgets.css
-							# 	Then npm run prepublish
-							# """
 							console.log "Extracted to egtk/"
 							monkeypatchee = "egtk/gtk-3.0/gtk-widgets.css"
 							console.log "Now npm run prepublish"
 							css = fs.readFileSync monkeypatchee, "utf8"
 							css = css.replace /(color: @transparent;)/, "/*$1*/"
 							fs.writeFileSync monkeypatchee, css, "utf8"
-							# color: @transparent;
 					.pipe(fs.createWriteStream(temp_file))
 			else
 				console.log "Source tarball link not found on page #{launchpad_homepage}"
